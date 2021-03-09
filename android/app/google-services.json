@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "270994793544",
+    "project_id": "anac-simulado",
+    "storage_bucket": "anac-simulado.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270994793544:android:56b4981101b3bd713ce47d",
+        "android_client_info": {
+          "package_name": "com.devcode.anac_simulado"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270994793544-cluqaicrkou63ptlt462oc1olb2avl2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIQtlKRfV4GSq8O8cF6JDrghaltAcMic0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270994793544-cluqaicrkou63ptlt462oc1olb2avl2a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "270994793544-hqeku2id656ofaaa7r2dr6mg39225gh1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.danielcode.anacsimulados"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
