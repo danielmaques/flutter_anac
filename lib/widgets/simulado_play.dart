@@ -1,10 +1,11 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class SimuladoWidgets extends StatefulWidget {
   final String opcoes, descricao, opcaoCorreta, opcaoSelecionada;
 
-  SimuladoWidgets(
-      {@required this.opcoes,
+  SimuladoWidgets({
+      @required this.opcoes,
       @required this.descricao,
       @required this.opcaoCorreta,
       @required this.opcaoSelecionada});
@@ -17,17 +18,22 @@ class _SimuladoWidgetsState extends State<SimuladoWidgets> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
           Container(
+            width: 26,
+            height: 26,
             decoration: BoxDecoration(
                 border: Border.all(
                     color: widget.descricao == widget.opcaoSelecionada
                         ? widget.opcaoSelecionada == widget.opcaoCorreta
                             ? Colors.green.withOpacity(0.7)
                             : Colors.red.withOpacity(0.7)
-                        : Colors.grey)),
-            child: Text(
+                        : Colors.grey, width: 1.4),
+            borderRadius: BorderRadius.circular(30)),
+            alignment: Alignment.center,
+            child: AutoSizeText(
               "${widget.opcoes}",
               style: TextStyle(
                   color: widget.opcaoSelecionada == widget.descricao
@@ -40,7 +46,7 @@ class _SimuladoWidgetsState extends State<SimuladoWidgets> {
           SizedBox(
             width: 8,
           ),
-          Text(
+          AutoSizeText(
             widget.descricao,
             style: TextStyle(fontSize: 17, color: Colors.black54),
           )

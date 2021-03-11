@@ -5,5 +5,5 @@ class QuestaoModel {
   String opcao3;
   String opcao4;
   String opcaoCorreta;
-  bool numero;
+  bool respondidas;
 }

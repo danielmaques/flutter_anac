@@ -33,13 +33,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Anac Simulado',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: (_isLoggedin ?? false) ? Home() : SignUp(),
+      home: (_isLoggedin ?? false) ? Home() : Home(),
     );
   }
 }

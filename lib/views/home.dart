@@ -62,13 +62,13 @@ class _HomeState extends State<Home> {
         brightness: Brightness.dark, //barra superior de notificação
       ),
       body: simuladoList(),
-      floatingActionButton: FloatingActionButton(
+      /*floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => MaisSimulados()));
         },
-      ),
+      ),*/
     );
   }
 }
