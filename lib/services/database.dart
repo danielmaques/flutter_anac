@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
@@ -28,7 +30,7 @@ class DatabaseService {
         .collection("Simulado")
         .doc(simuladoId)
         .collection("QNA")
+        .orderBy("id")
         .get();
   }
-  
 }
