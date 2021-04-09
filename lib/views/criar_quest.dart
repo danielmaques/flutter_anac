@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:random_string/random_string.dart';
 
 import '../services/database.dart';
-import '../services/database.dart';
 import 'add_questao.dart';
 
 class CriarQuestao extends StatefulWidget {

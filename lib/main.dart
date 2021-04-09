@@ -1,7 +1,5 @@
 import 'package:anac_simulado/ajuda/functions.dart';
 import 'package:anac_simulado/views/home.dart';
-import 'package:anac_simulado/views/signin.dart';
-import 'package:anac_simulado/views/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

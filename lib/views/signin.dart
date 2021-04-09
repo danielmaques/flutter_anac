@@ -3,7 +3,6 @@ import 'package:anac_simulado/services/auth.dart';
 import 'package:anac_simulado/views/home.dart';
 import 'package:anac_simulado/views/signup.dart';
 import 'package:anac_simulado/widgets/widgets.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Sing extends StatefulWidget {
@@ -41,7 +40,7 @@ class _SingState extends State<Sing> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold (
         appBar: AppBar(
           centerTitle: true,
           title: appBar(context),

@@ -10,7 +10,9 @@ import 'package:flutter/material.dart';
 class Simulado extends StatefulWidget {
   final String simuladoId;
 
-  Simulado(this.simuladoId);
+  Simulado(
+      this.simuladoId,
+      );
 
   @override
   _SimuladoState createState() => _SimuladoState();

@@ -1,6 +1,4 @@
 import 'package:anac_simulado/services/database.dart';
-import 'package:anac_simulado/views/criar_quest.dart';
-import 'package:anac_simulado/views/mais_simulados.dart';
 import 'package:anac_simulado/views/simulado.dart';
 import 'package:anac_simulado/widgets/widgets.dart';
 import 'package:flutter/material.dart';
