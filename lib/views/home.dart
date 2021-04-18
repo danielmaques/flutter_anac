@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
         title: appBar(context),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        brightness: Brightness.dark, //barra superior de notificação
+        //brightness: Brightness.dark, //barra superior de notificação
       ),
       body: simuladoList(),
       /*floatingActionButton: FloatingActionButton(

@@ -3,6 +3,24 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
+
+  static const AUTO_ID_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  static const AUTO_ID_LENGTH = 20;
+
+  String _getAutoId() {
+    final buffer = StringBuffer();
+    final random = Random.secure();
+
+    final maxRandom = AUTO_ID_ALPHABET.length;
+
+    for (int i = 0; i < AUTO_ID_LENGTH; i++) {
+      buffer.write(AUTO_ID_ALPHABET[random.nextInt(maxRandom)]);
+    }
+    return buffer.toString();
+  }
+
+
+
   Future<void> addSimuladoData(Map simuladoData, String simuladoId) async {
     await FirebaseFirestore.instance
         .collection("Simulado")
@@ -31,6 +49,7 @@ class DatabaseService {
         .doc(simuladoId)
         .collection("QNA")
         .orderBy("id")
+        .limit(20)
         .get();
   }
 }

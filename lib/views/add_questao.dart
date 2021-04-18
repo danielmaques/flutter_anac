@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../services/database.dart';
-import '../services/database.dart';
-import '../widgets/widgets.dart';
 import '../widgets/widgets.dart';
 
 class AddQuestao extends StatefulWidget {
@@ -53,7 +51,7 @@ class _AddQuestaoState extends State<AddQuestao> {
         title: appBar(context),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        iconTheme: IconThemeData(color: Colors.black45),
+
         brightness: Brightness.dark, //barra superior de notificação
       ),
       body: _isLoading ? Container(

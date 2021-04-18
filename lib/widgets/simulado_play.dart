@@ -33,22 +33,26 @@ class _SimuladoWidgetsState extends State<SimuladoWidgets> {
                         : Colors.grey, width: 1.4),
             borderRadius: BorderRadius.circular(30)),
             alignment: Alignment.center,
-            child: AutoSizeText(
-              "${widget.opcoes}",
-              style: TextStyle(
-                  color: widget.opcaoSelecionada == widget.descricao
-                      ? widget.opcaoCorreta == widget.opcaoSelecionada
-                          ? Colors.green.withOpacity(0.7)
-                          : Colors.red
-                      : Colors.black54),
+            child: Flexible(
+              child: Text(
+                "${widget.opcoes}",
+                style: TextStyle(
+                    color: widget.opcaoSelecionada == widget.descricao
+                        ? widget.opcaoCorreta == widget.opcaoSelecionada
+                            ? Colors.green.withOpacity(0.7)
+                            : Colors.red
+                        : Colors.black54),
+              ),
             ),
           ),
           SizedBox(
             width: 8,
           ),
-          AutoSizeText(
-            widget.descricao,
-            style: TextStyle(fontSize: 17, color: Colors.black54),
+          Flexible(
+            child: Text(
+              widget.descricao,
+              style: TextStyle(fontSize: 17, color: Colors.black54),
+            ),
           )
         ],
       ),
