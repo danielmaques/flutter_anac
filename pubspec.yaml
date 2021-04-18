@@ -21,6 +21,7 @@ dependencies:
   auto_size_text: ^2.1.0
   shared_preferences:
   firebase_core :
+  fl_chart:
 
   cupertino_icons: ^1.0.0
   

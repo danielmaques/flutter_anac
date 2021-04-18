@@ -122,11 +122,14 @@ class SimuladoTile extends StatelessWidget {
                   SizedBox(
                     height: 6,
                   ),
-                  Text(descsricao,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400)),
+                /*Text(
+                    descsricao,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),*/
                 ],
               ),
             )
