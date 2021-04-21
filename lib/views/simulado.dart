@@ -11,8 +11,8 @@ class Simulado extends StatefulWidget {
   final String simuladoId;
 
   Simulado(
-      this.simuladoId,
-      );
+    this.simuladoId,
+  );
 
   @override
   _SimuladoState createState() => _SimuladoState();
@@ -73,7 +73,6 @@ class _SimuladoState extends State<Simulado> {
         title: appBar(context),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        iconTheme: IconThemeData(color: Colors.black54),
         brightness: Brightness.dark, //barra superior de notificação
       ),
       body: Container(
@@ -103,14 +102,18 @@ class _SimuladoState extends State<Simulado> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.check),
-        onPressed: (){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Resultados(
-            correta: _corretas,
-            incorreta: _incorretas,
-            total: total,
-            faltou: _corretas + _incorretas - total,
-          )
-          ));
+        onPressed: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Resultados(
+                correta: _corretas,
+                incorreta: _incorretas,
+                total: total,
+                faltou: _corretas + _incorretas - total,
+              ),
+            ),
+          );
         },
       ),
     );
