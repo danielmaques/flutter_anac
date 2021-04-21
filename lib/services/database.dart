@@ -1,9 +1,10 @@
+import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
 
-  /*static const AUTO_ID_ALPHABET = '0123456789';
+  static const AUTO_ID_ALPHABET = '0123456789';
   static const AUTO_ID_LENGTH = 2;
   String _getAutoId() {
     final buffer = StringBuffer();
@@ -15,7 +16,7 @@ class DatabaseService {
       buffer.write(AUTO_ID_ALPHABET[random.nextInt(maxRandom)]);
     }
     return buffer.toString();
-  }*/
+  }
 
 
 
@@ -44,11 +45,12 @@ class DatabaseService {
   }
 
   getQustoes(String simuladoId) async{
+    final autoId = _getAutoId();
     return await FirebaseFirestore.instance
         .collection("Simulado")
         .doc(simuladoId)
         .collection("QNA")
-    //.where('id', isGreaterThanOrEqualTo: autoId)
+        .where('id', isGreaterThanOrEqualTo: autoId)
         .limit(20)
         .get();
   }
