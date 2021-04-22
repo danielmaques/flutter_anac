@@ -24,6 +24,7 @@ dependencies:
   fl_chart:
 
   cupertino_icons: ^1.0.0
+  firebase_messaging:
   
 
 dev_dependencies:
