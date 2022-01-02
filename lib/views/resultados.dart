@@ -7,18 +7,19 @@ import 'package:flutter/material.dart';
 class Resultados extends StatefulWidget {
   final int correta, incorreta, total, faltou;
 
-  Resultados(
-      {@required this.correta,
-      @required this.incorreta,
-      @required this.total,
-      @required this.faltou});
+  Resultados({
+    required this.correta,
+    required this.incorreta,
+    required this.total,
+    required this.faltou,
+  });
 
   @override
   _ResultadosState createState() => _ResultadosState();
 }
 
 class _ResultadosState extends State<Resultados> {
-  int touchedIndex;
+  late int touchedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class _ResultadosState extends State<Resultados> {
                                 if (desiredTouch &&
                                     pieTouchResponse.touchedSection != null) {
                                   touchedIndex = pieTouchResponse
-                                      .touchedSection.touchedSectionIndex;
+                                      .touchedSection!.touchedSectionIndex;
                                 } else {
                                   touchedIndex = -1;
                                 }
@@ -120,7 +121,9 @@ class _ResultadosState extends State<Resultados> {
                 ],
               ),
             ),
-            SizedBox(height: 200,),
+            SizedBox(
+              height: 200,
+            ),
             Container(
               child: Column(
                 children: [
@@ -172,7 +175,16 @@ class _ResultadosState extends State<Resultados> {
                   color: const Color(0xffffffff)),
             );
           default:
-            return null;
+            return PieChartSectionData(
+              color: const Color(0xff13d38e),
+              value: widget.correta / 1,
+              title: '${widget.correta}',
+              radius: radius,
+              titleStyle: TextStyle(
+                  fontSize: fontSize,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xffffffff)),
+            );
         }
       },
     );

@@ -1,14 +1,15 @@
-import 'package:anac_simulado/ajuda/functions.dart';
-import 'package:anac_simulado/views/home.dart';
+import 'package:anac_simulado/helper/functions.dart';
+import 'package:anac_simulado/views/signin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'modules/home/home.dart';
+
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
-      statusBarBrightness: Brightness.light
-  ));
+      statusBarBrightness: Brightness.light));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
@@ -29,8 +30,8 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
-  checkUserLoggedInStatus()async{
-    _isLoggedin = await HelperFunctions.getUserLoggedInDetails();
+  checkUserLoggedInStatus() async {
+    _isLoggedin = (await HelperFunctions.getUserLoggedInDetails())!;
   }
 
   @override
@@ -42,7 +43,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: (_isLoggedin ?? false) ? Home() : Home(),
+      home: _isLoggedin == false ? Home() : Home(),
     );
   }
 }

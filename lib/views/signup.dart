@@ -1,6 +1,8 @@
-import 'package:anac_simulado/ajuda/functions.dart';
+// ignore_for_file: deprecated_member_use, unused_field
+
+import 'package:anac_simulado/helper/functions.dart';
+import 'package:anac_simulado/modules/home/home.dart';
 import 'package:anac_simulado/services/auth.dart';
-import 'package:anac_simulado/views/home.dart';
 import 'package:anac_simulado/views/signin.dart';
 import 'package:anac_simulado/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +14,13 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
-  String nome, email, senha;
+  late String nome, email, senha;
 
   AuthService authService = new AuthService();
   bool _isLoading = false;
 
   signUp() async {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
       });
@@ -38,13 +40,13 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: appBar(context),
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        brightness: Brightness.dark,
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: appBar(context),
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0.0,
+      //   brightness: Brightness.dark,
+      // ),
       body: Form(
         key: _formKey,
         child: Container(
@@ -52,9 +54,11 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               children: [
                 Spacer(),
+                appBar(context),
+                Spacer(),
                 TextFormField(
                   validator: (val) {
-                    return val.isEmpty ? "Digite seu nome!" : null;
+                    return val!.isEmpty ? "Digite seu nome!" : null;
                   },
                   decoration: InputDecoration(hintText: "Nome"),
                   onChanged: (val) {
@@ -66,7 +70,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 TextFormField(
                   validator: (val) {
-                    return val.isEmpty ? "Digite um email valido!" : null;
+                    return val!.isEmpty ? "Digite um email valido!" : null;
                   },
                   decoration: InputDecoration(hintText: "Email"),
                   onChanged: (val) {
@@ -79,7 +83,7 @@ class _SignUpState extends State<SignUp> {
                 TextFormField(
                   obscureText: true,
                   validator: (val) {
-                    return val.isEmpty ? "Senha" : null;
+                    return val!.isEmpty ? "Senha" : null;
                   },
                   decoration:
                       InputDecoration(hintText: "Senha (Minimo 8 Caracteres)"),
@@ -93,7 +97,7 @@ class _SignUpState extends State<SignUp> {
                 ButtonTheme(
                   minWidth: 400,
                   height: 55,
-                  // ignore: deprecated_member_use
+                  // ignore:
                   child: RaisedButton(
                     onPressed: () {
                       signUp();

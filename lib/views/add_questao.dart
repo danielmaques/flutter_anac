@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 import '../services/database.dart';
@@ -14,13 +16,13 @@ class AddQuestao extends StatefulWidget {
 
 class _AddQuestaoState extends State<AddQuestao> {
   final _formKey = GlobalKey<FormState>();
-  String questao, opcao1, opcao2, opcao3, opcao4;
+  late String questao, opcao1, opcao2, opcao3, opcao4;
   bool _isLoading = false;
 
   DatabaseService databaseService = new DatabaseService();
 
   atulaizarQuestaoDta() async {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
 
       setState(() {
         _isLoading = true;
@@ -63,7 +65,7 @@ class _AddQuestaoState extends State<AddQuestao> {
                 child: Column(
                   children: [
                     TextFormField(
-                      validator: (val) => val.isEmpty ? "Questão" : null,
+                      validator: (val) => val!.isEmpty ? "Questão" : null,
                       decoration: InputDecoration(hintText: "Questão"),
                       onChanged: (val) {
                         questao = val;
@@ -73,7 +75,7 @@ class _AddQuestaoState extends State<AddQuestao> {
                       height: 6,
                     ),
                     TextFormField(
-                      validator: (val) => val.isEmpty ? "Opção" : null,
+                      validator: (val) => val!.isEmpty ? "Opção" : null,
                       decoration:
                           InputDecoration(hintText: "Opcção1 (Opção Correta)"),
                       onChanged: (val) {
@@ -84,7 +86,7 @@ class _AddQuestaoState extends State<AddQuestao> {
                       height: 6,
                     ),
                     TextFormField(
-                      validator: (val) => val.isEmpty ? "Opção" : null,
+                      validator: (val) => val!.isEmpty ? "Opção" : null,
                       decoration: InputDecoration(hintText: "Opcção2"),
                       onChanged: (val) {
                         opcao2 = val;
@@ -94,7 +96,7 @@ class _AddQuestaoState extends State<AddQuestao> {
                       height: 6,
                     ),
                     TextFormField(
-                      validator: (val) => val.isEmpty ? "Opção" : null,
+                      validator: (val) => val!.isEmpty ? "Opção" : null,
                       decoration: InputDecoration(hintText: "Opcção3"),
                       onChanged: (val) {
                         opcao3 = val;
@@ -104,7 +106,7 @@ class _AddQuestaoState extends State<AddQuestao> {
                       height: 6,
                     ),
                     TextFormField(
-                      validator: (val) => val.isEmpty ? "Opção" : null,
+                      validator: (val) => val!.isEmpty ? "Opção" : null,
                       decoration: InputDecoration(hintText: "Opcção4"),
                       onChanged: (val) {
                         opcao4 = val;

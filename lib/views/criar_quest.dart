@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:anac_simulado/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:random_string/random_string.dart';
@@ -12,13 +14,13 @@ class CriarQuestao extends StatefulWidget {
 
 class _CriarQuestaoState extends State<CriarQuestao> {
   final _formKey = GlobalKey<FormState>();
-  String simuladoImgUrl, simuladoTitulo, simuladoDescricao, simuladoId;
+  late String simuladoImgUrl, simuladoTitulo, simuladoDescricao, simuladoId;
   DatabaseService databaseService = new DatabaseService();
 
   bool _isLoading = false;
 
   creteSimuladoOnLine() async {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
       });
@@ -69,7 +71,7 @@ class _CriarQuestaoState extends State<CriarQuestao> {
             children: [
               TextFormField(
                 validator: (val) =>
-                val.isEmpty ? "Coloque a Url da imagem" : null,
+                val!.isEmpty ? "Coloque a Url da imagem" : null,
                 decoration: InputDecoration(hintText: "Imagem Url"),
                 onChanged: (val) {
                   simuladoImgUrl = val;
@@ -80,7 +82,7 @@ class _CriarQuestaoState extends State<CriarQuestao> {
               ),
               TextFormField(
                 validator: (val) =>
-                val.isEmpty ? "Coloque um título" : null,
+                val!.isEmpty ? "Coloque um título" : null,
                 decoration: InputDecoration(hintText: "Título"),
                 onChanged: (val) {
                   simuladoTitulo = val;
@@ -91,7 +93,7 @@ class _CriarQuestaoState extends State<CriarQuestao> {
               ),
               TextFormField(
                 validator: (val) =>
-                val.isEmpty ? "Coloque uma descrição" : null,
+                val!.isEmpty ? "Coloque uma descrição" : null,
                 decoration: InputDecoration(hintText: "Descrição"),
                 onChanged: (val) {
                   simuladoDescricao = val;

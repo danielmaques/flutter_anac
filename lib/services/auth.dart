@@ -1,10 +1,12 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:anac_simulado/models/usuario.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Usuario _userFromFirebaseUser(User usuario) {
+  Usuario? _userFromFirebaseUser(User usuario) {
     return usuario != null ? Usuario(uId: usuario.uid) : null;
   }
 
@@ -12,8 +14,8 @@ class AuthService {
     try {
       UserCredential userCredential =
       await _auth.signInWithEmailAndPassword(email: email, password: senha);
-      User user = userCredential.user;
-      return _userFromFirebaseUser(user);
+      User? user = userCredential.user;
+      return _userFromFirebaseUser(user!);
     } catch (e) {
       print(e.toString());
     }
@@ -23,8 +25,8 @@ class AuthService {
     try {
       UserCredential userCredential = await _auth
           .createUserWithEmailAndPassword(email: email, password: senha);
-      User user = userCredential.user;
-      return _userFromFirebaseUser(user);
+      User? user = userCredential.user;
+      return _userFromFirebaseUser(user!);
     } catch (e) {
       print(e.toString());
     }

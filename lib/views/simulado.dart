@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison, deprecated_member_use
+
 import 'package:anac_simulado/models/questao_model.dart';
 import 'package:anac_simulado/services/database.dart';
 import 'package:anac_simulado/views/resultados.dart';
@@ -25,23 +27,23 @@ int _naoRespondidas = 0;
 
 class _SimuladoState extends State<Simulado> {
   DatabaseService databaseService = new DatabaseService();
-  QuerySnapshot questaoSnapshot;
+  late QuerySnapshot questaoSnapshot;
 
   QuestaoModel getQuestaoModelDatasnapshot(DocumentSnapshot questaoSnapshot) {
     QuestaoModel questaoModel = new QuestaoModel();
-    questaoModel.questao = questaoSnapshot.data()["questao"];
+    questaoModel.questao = questaoSnapshot["questao"];
     List<String> opcao = [
-      questaoSnapshot.data()["opcao1"],
-      questaoSnapshot.data()["opcao2"],
-      questaoSnapshot.data()["opcao3"],
-      questaoSnapshot.data()["opcao4"],
+      questaoSnapshot["opcao1"],
+      questaoSnapshot["opcao2"],
+      questaoSnapshot["opcao3"],
+      questaoSnapshot["opcao4"],
     ];
     opcao.shuffle();
     questaoModel.opcao1 = opcao[0];
     questaoModel.opcao2 = opcao[1];
     questaoModel.opcao3 = opcao[2];
     questaoModel.opcao4 = opcao[3];
-    questaoModel.opcaoCorreta = questaoSnapshot.data()["opcao1"];
+    questaoModel.opcaoCorreta = questaoSnapshot["opcao1"];
     questaoModel.respondidas = false;
 
     return questaoModel;
@@ -124,7 +126,7 @@ class SimuladoPlayTile extends StatefulWidget {
   final QuestaoModel questaoModel;
   final int index;
 
-  SimuladoPlayTile({this.questaoModel, this.index});
+  SimuladoPlayTile({required this.questaoModel, required this.index});
 
   @override
   _SimuladoPlayTileState createState() => _SimuladoPlayTileState();

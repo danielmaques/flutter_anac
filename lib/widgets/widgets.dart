@@ -18,7 +18,7 @@ Widget appBar(BuildContext context) {
   );
 }
 
-Widget btnBlue({BuildContext context, String label, btnWidth}) {
+Widget btnBlue({required BuildContext context, required String label, btnWidth}) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 18),
     decoration: BoxDecoration(

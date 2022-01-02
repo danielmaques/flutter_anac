@@ -1,14 +1,13 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class SimuladoWidgets extends StatefulWidget {
   final String opcoes, descricao, opcaoCorreta, opcaoSelecionada;
 
   SimuladoWidgets({
-      @required this.opcoes,
-      @required this.descricao,
-      @required this.opcaoCorreta,
-      @required this.opcaoSelecionada});
+      required this.opcoes,
+      required this.descricao,
+      required this.opcaoCorreta,
+      required this.opcaoSelecionada});
 
   @override
   _SimuladoWidgetsState createState() => _SimuladoWidgetsState();

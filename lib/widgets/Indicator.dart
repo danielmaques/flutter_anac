@@ -6,7 +6,7 @@ class Indicator extends StatelessWidget {
 
   Indicator({
     this.color,
-    this.text,
+    required this.text,
   });
 
   @override

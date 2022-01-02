@@ -1,9 +1,9 @@
 class QuestaoModel {
-  String questao;
-  String opcao1;
-  String opcao2;
-  String opcao3;
-  String opcao4;
-  String opcaoCorreta;
-  bool respondidas;
+  late String questao;
+  late String opcao1;
+  late String opcao2;
+  late String opcao3;
+  late String opcao4;
+  late String opcaoCorreta;
+  late bool respondidas;
 }
